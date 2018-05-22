@@ -9,7 +9,9 @@
     "watch": "webpack --progress --colors --watch --mode 'development'",
     "build": "webpack -p --mode 'production'",
     "lint": "eslint src/**/*.vue src/**/*.js --color --global OC --global requirejs",
-    "acceptance-tests": "nightwatch"
+    "acceptance-tests": "nightwatch",
+    "compile-theme": "lessc src/themes/owncloud.less core/css/uikit.owncloud.css --relative-urls",
+    "compile-icons": "mkdir core/fonts && cp node_modules/material-icons/iconfont/MaterialIcons-Regular.* core/fonts/ && sass src/themes/icons.scss core/css/material-icons.css --no-source-map"
   },
   "author": "Felix Heidecke",
   "license": "AGPL-1.0",
@@ -26,6 +28,7 @@
     "nightwatch": "^0.9.20",
     "nightwatch-cucumber": "^9.1.2",
     "vue-html-loader": "^1.2.4",
+	"sass": "^1.3.2",
     "vue-loader": "^14.2.2",
     "vue-style-loader": "^4.1.0",
     "webpack": "^4.8.1",
@@ -36,6 +39,7 @@
     "jquery": "^3.3.1",
     "js-owncloud-client": "^0.1.3",
     "lodash": "^4.17.10",
+    "material-icons": "^0.2.3",
     "requirejs": "^2.3.5",
     "uikit": "^3.0.0-beta.42",
     "vue": "^2.5.16",
